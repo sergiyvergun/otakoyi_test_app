@@ -13,15 +13,18 @@ class Badge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double size = 12;
     return Stack(
       overflow: Overflow.visible,
       alignment: Alignment.topRight,
       children: [
         child,
         Positioned(
-          left: 10,
+          left: 11,
+          bottom: 12,
           child: Container(
-            height: 12,
+            height: size,
+            width: size,
             decoration: BoxDecoration(
                 shape: BoxShape.circle, color: NotificationColors.success),
             child: Center(
