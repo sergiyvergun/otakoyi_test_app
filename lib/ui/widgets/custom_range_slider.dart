@@ -16,6 +16,13 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
   var endRangeTextEditingController = TextEditingController();
 
   @override
+  void initState() {
+    startRangeTextEditingController.text = _values.start.round().toString();
+    endRangeTextEditingController.text = _values.end.round().toString();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
