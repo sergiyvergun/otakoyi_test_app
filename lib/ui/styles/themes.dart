@@ -25,5 +25,11 @@ class Themes {
       fontWeight: FontWeight.w500,
       color: TypographyColors.darkBlue.withOpacity(0.6),
     ),
+    // bottom bar text style
+    bodyText2: GoogleFonts.workSans(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      color: TypographyColors.darkBlue.withOpacity(0.6),
+    ),
   ));
 }

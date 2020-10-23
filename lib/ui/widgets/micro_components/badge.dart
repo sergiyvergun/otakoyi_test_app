@@ -4,11 +4,15 @@ import 'package:otakoyi_test_app/ui/styles/colors.dart';
 class Badge extends StatelessWidget {
   final int number;
   final Widget child;
+  final double leftPositioned;
+  final double bottomPositioned;
 
   const Badge({
     Key key,
     @required this.child,
     @required this.number,
+    this.leftPositioned,
+    this.bottomPositioned,
   }) : super(key: key);
 
   @override
@@ -20,8 +24,8 @@ class Badge extends StatelessWidget {
       children: [
         child,
         Positioned(
-          left: 11,
-          bottom: 12,
+          left: leftPositioned ?? 11,
+          bottom: bottomPositioned ?? 12,
           child: Container(
             height: size,
             width: size,
