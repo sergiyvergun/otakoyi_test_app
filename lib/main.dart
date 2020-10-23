@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Otakoyi Test App',
       home: Home(),
-      theme: Themes.lightTheme,
+      theme: Themes().lightTheme,
     );
   }
 }

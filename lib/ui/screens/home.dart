@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SurfaceColors.lightGrey,
+      backgroundColor: SurfaceColors.backgroundColor,
       appBar: CustomAppbar(
         title: Image.asset(
           'assets/images/logo.png',
@@ -38,8 +38,11 @@ class Home extends StatelessWidget {
             ),
             enabled: true,
           ),
-          Container(height: 25),
-          Text('Filters'),
+          Container(height: 20),
+          Text(
+            'Filters',
+            style: Theme.of(context).textTheme.headline1,
+          ),
           Container(height: 16),
           CustomForm(
             enabled: false,
@@ -49,6 +52,31 @@ class Home extends StatelessWidget {
               Icons.arrow_drop_down,
               color: SurfaceColors.darkBlue,
             ),
+          ),
+          Container(height: 20),
+          CustomForm(
+            enabled: false,
+            hintText: 'Type of case',
+            suffixIcon: Icon(
+              Icons.arrow_drop_down,
+              color: SurfaceColors.darkBlue,
+            ),
+          ),
+          Container(height: 20),
+          CustomForm(
+            enabled: false,
+            hintText: 'State',
+            suffixIcon: Icon(
+              Icons.arrow_drop_down,
+              color: SurfaceColors.darkBlue,
+            ),
+          ),
+          Container(height: 20),
+          Divider(color: SurfaceColors.mediumGrey),
+          Container(height: 10),
+          Text(
+            'Choose the rate',
+            style: Theme.of(context).textTheme.headline2,
           ),
         ],
       ),

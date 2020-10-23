@@ -4,6 +4,8 @@ class SurfaceColors {
   static const Color darkBlue = Color(0xff0D2834);
   static const Color gold = Color(0xffC8A574);
   static const Color mediumGrey = Color(0xffB6BFC2);
+  // medium grey with 0.38 opacity - better to have a separate color
+  static const Color backgroundColor = Color(0xfff6f8f9);
   static const Color lightGrey = Color(0xffE8ECEE);
   static const Color white = Color(0xffFFFFFF);
 }
