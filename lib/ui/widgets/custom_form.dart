@@ -7,6 +7,9 @@ class CustomForm extends StatelessWidget {
   final String initialText;
   final bool enabled;
   final Widget suffixIcon;
+  final Widget suffix;
+  final TextEditingController controller;
+  final Function(String) onChanged;
 
   const CustomForm({
     Key key,
@@ -15,6 +18,9 @@ class CustomForm extends StatelessWidget {
     this.labelText,
     this.suffixIcon,
     this.initialText,
+    this.suffix,
+    this.controller,
+    this.onChanged,
   }) : super(key: key);
 
   get borderRadius => BorderRadius.circular(6);
@@ -26,6 +32,10 @@ class CustomForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onChanged: (String value) {
+        onChanged(value);
+      },
       initialValue: initialText,
       style: Theme.of(context)
           .textTheme
@@ -35,6 +45,7 @@ class CustomForm extends StatelessWidget {
       decoration: InputDecoration(
           filled: true,
           fillColor: SurfaceColors.white,
+          suffix: suffix,
           suffixIcon: suffixIcon,
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
           focusedBorder: border,
