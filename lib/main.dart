@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otakoyi_test_app/ui/screens/filters_screen.dart';
-import 'package:otakoyi_test_app/ui/styles/colors.dart';
+import 'package:otakoyi_test_app/ui/screens/users_screen.dart';
 import 'package:otakoyi_test_app/ui/styles/themes.dart';
 
 void main() {

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:otakoyi_test_app/ui/screens/users_screen.dart';
 import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_app_bar.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_button.dart';
@@ -31,6 +32,7 @@ class FiltersScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
+        physics: ClampingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16),
         children: [
           Container(height: 21),
@@ -95,14 +97,21 @@ class FiltersScreen extends StatelessWidget {
           Container(height: 17),
           CustomRangeSlider(),
           Container(height: 19),
-          CustomButton(
-            onPressed: () {},
-            title: 'Apply Filters',
-            backgroundColor: SurfaceColors.darkBlue,
-            titleColor: TypographyColors.white,
-          ),
         ],
       ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: CustomButton(
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => UsersScreen()));
+          },
+          title: 'Apply Filters',
+          backgroundColor: SurfaceColors.darkBlue,
+          titleColor: TypographyColors.white,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

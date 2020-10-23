@@ -17,17 +17,20 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-      padding: EdgeInsets.symmetric(vertical: 17),
-      color: backgroundColor,
-      onPressed: onPressed,
-      child: Text(
-        title,
-        style:
-            Theme.of(context).textTheme.subtitle1.copyWith(color: titleColor),
+    return ButtonTheme(
+      minWidth: double.infinity,
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 17),
+        color: backgroundColor,
+        onPressed: onPressed,
+        child: Text(
+          title,
+          style:
+              Theme.of(context).textTheme.subtitle1.copyWith(color: titleColor),
+        ),
       ),
     );
   }
