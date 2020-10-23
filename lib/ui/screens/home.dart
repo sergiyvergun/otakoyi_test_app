@@ -5,6 +5,7 @@ import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_app_bar.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_button.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_form.dart';
+import 'package:otakoyi_test_app/ui/widgets/custom_pop_menu_button.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_range_slider.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/badge.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_divider.dart';
@@ -39,7 +40,6 @@ class Home extends StatelessWidget {
               Icons.search,
               color: SurfaceColors.gold,
             ),
-            enabled: true,
           ),
           Container(height: 20),
           Text(
@@ -48,31 +48,42 @@ class Home extends StatelessWidget {
           ),
           Container(height: 16),
           CustomForm(
-            enabled: false,
-            initialText: 'All areas',
             labelText: 'Area of practice',
+            popupMenuDetails: [
+              PopUpMenuItemDetails(value: 'All areas'),
+              PopUpMenuItemDetails(value: 'Banking and Debt Finance Law'),
+            ],
             suffixIcon: Icon(
               Icons.arrow_drop_down,
               color: SurfaceColors.darkBlue,
             ),
+            controller: TextEditingController(),
           ),
           Container(height: 20),
           CustomForm(
-            enabled: false,
-            hintText: 'Type of case',
+            labelText: 'Type of case',
+            popupMenuDetails: [
+              PopUpMenuItemDetails(value: 'Reasons'),
+              PopUpMenuItemDetails(value: 'Costs and Benefits'),
+            ],
             suffixIcon: Icon(
               Icons.arrow_drop_down,
               color: SurfaceColors.darkBlue,
             ),
+            controller: TextEditingController(),
           ),
           Container(height: 20),
           CustomForm(
-            enabled: false,
-            hintText: 'State',
+            labelText: 'State',
+            popupMenuDetails: [
+              PopUpMenuItemDetails(value: 'North Dakota'),
+              PopUpMenuItemDetails(value: 'Oklahoma'),
+            ],
             suffixIcon: Icon(
               Icons.arrow_drop_down,
               color: SurfaceColors.darkBlue,
             ),
+            controller: TextEditingController(),
           ),
           Container(height: 20),
           CustomDivider(),
