@@ -4,6 +4,7 @@ import 'package:otakoyi_test_app/models/user.dart';
 import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_button.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_chip.dart';
+import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_divider.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/vertical_tag.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +38,8 @@ class UserInfo extends StatelessWidget {
                 OrganizationButton(organizationName: user.organization),
               Container(height: 9),
               EditButtons(),
+              Container(height: 9),
+              CustomDivider(),
             ],
           ),
         ),
