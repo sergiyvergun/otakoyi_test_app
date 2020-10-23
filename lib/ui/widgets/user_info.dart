@@ -15,21 +15,23 @@ class UserInfo extends StatelessWidget {
     return Provider<User>.value(
       value: user,
       child: Container(
-        child: ListView(
+        child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          shrinkWrap: true,
-          children: [
-            Container(height: 20),
-            UserTitle(),
-            Container(height: 16),
-            UserInfoChips(),
-            Container(height: 16),
-            AboutUser(),
-            Container(height: 16),
-            CompanyInfoChips(),
-            Container(height: 20),
-            UserDetails(),
-          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(height: 20),
+              UserTitle(),
+              Container(height: 16),
+              UserInfoChips(),
+              Container(height: 16),
+              AboutUser(),
+              Container(height: 16),
+              CompanyInfoChips(),
+              Container(height: 20),
+              UserDetails(),
+            ],
+          ),
         ),
       ),
     );
@@ -109,6 +111,7 @@ class UserDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     var user = context.watch<User>();
     return GridView.count(
+      physics: ClampingScrollPhysics(),
       childAspectRatio: 2.7,
       crossAxisCount: 2,
       shrinkWrap: true,
