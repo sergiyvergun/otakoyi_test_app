@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_app_bar.dart';
+import 'package:otakoyi_test_app/ui/widgets/custom_button.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_form.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_range_slider.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/badge.dart';
@@ -82,6 +83,13 @@ class Home extends StatelessWidget {
           ),
           Container(height: 17),
           CustomRangeSlider(),
+          Container(height: 19),
+          CustomButton(
+            onPressed: () {},
+            title: 'Apply Filters',
+            backgroundColor: SurfaceColors.darkBlue,
+            titleColor: TypographyColors.white,
+          ),
         ],
       ),
     );
