@@ -6,13 +6,17 @@ class CustomButton extends StatelessWidget {
   final String title;
   final Color titleColor;
   final Color backgroundColor;
+  final Widget trailing;
+  final Color borderColor;
 
   const CustomButton(
       {Key key,
       this.onPressed,
       this.title,
       this.titleColor = Colors.white,
-      this.backgroundColor = SurfaceColors.darkBlue})
+      this.backgroundColor = SurfaceColors.darkBlue,
+      this.trailing,
+      this.borderColor})
       : super(key: key);
 
   @override
@@ -20,16 +24,30 @@ class CustomButton extends StatelessWidget {
     return ButtonTheme(
       minWidth: double.infinity,
       child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0),
-        ),
+        shape: borderColor != null
+            ? RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0),
+                side: BorderSide(color: borderColor, width: 2))
+            : null,
         padding: EdgeInsets.symmetric(vertical: 17),
         color: backgroundColor,
         onPressed: onPressed,
-        child: Text(
-          title,
-          style:
-              Theme.of(context).textTheme.subtitle1.copyWith(color: titleColor),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle1
+                  .copyWith(color: titleColor),
+            ),
+            if (trailing != null)
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: trailing,
+              )
+          ],
         ),
       ),
     );

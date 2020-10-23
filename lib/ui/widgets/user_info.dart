@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otakoyi_test_app/models/user.dart';
+import 'package:otakoyi_test_app/ui/styles/colors.dart';
+import 'package:otakoyi_test_app/ui/widgets/custom_button.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_chip.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/vertical_tag.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +32,11 @@ class UserInfo extends StatelessWidget {
               CompanyInfoChips(),
               Container(height: 20),
               UserDetails(),
+              Container(height: 5),
+              if (user.organization != null)
+                OrganizationButton(organizationName: user.organization),
+              Container(height: 9),
+              EditButtons(),
             ],
           ),
         ),
@@ -134,6 +141,55 @@ class UserDetails extends StatelessWidget {
           labelText: 'Represent',
           valueText: user.represent.toString(),
         ),
+      ],
+    );
+  }
+}
+
+class OrganizationButton extends StatelessWidget {
+  final String organizationName;
+
+  const OrganizationButton({Key key, this.organizationName}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return CustomButton(
+      title: 'More about ${organizationName}',
+      backgroundColor: SurfaceColors.gold,
+      titleColor: TypographyColors.white,
+      trailing: Icon(
+        Icons.info_outline,
+        color: TypographyColors.white,
+        size: 20,
+      ),
+      onPressed: () {},
+    );
+  }
+}
+
+class EditButtons extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: CustomButton(
+            title: 'Edit',
+            backgroundColor: SurfaceColors.white,
+            titleColor: TypographyColors.darkBlue,
+            borderColor: SurfaceColors.mediumGrey,
+            onPressed: () {},
+          ),
+        ),
+        Container(width: 10),
+        Expanded(
+          child: CustomButton(
+            title: 'Delete',
+            backgroundColor: SurfaceColors.white,
+            titleColor: NotificationColors.errors,
+            borderColor: NotificationColors.errors,
+            onPressed: () {},
+          ),
+        )
       ],
     );
   }
