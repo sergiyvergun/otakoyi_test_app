@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otakoyi_test_app/ui/screens/home.dart';
+import 'package:otakoyi_test_app/ui/screens/filters_screen.dart';
 import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/styles/themes.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Otakoyi Test App',
-      home: Home(),
+      home: FiltersScreen(),
       theme: Themes().lightTheme,
     );
   }

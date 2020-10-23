@@ -11,7 +11,7 @@ import 'package:otakoyi_test_app/ui/widgets/micro_components/badge.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_divider.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/custom_icon_button.dart';
 
-class Home extends StatelessWidget {
+class FiltersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
