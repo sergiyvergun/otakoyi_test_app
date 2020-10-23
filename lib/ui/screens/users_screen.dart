@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:otakoyi_test_app/ui/styles/colors.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_app_bar.dart';
 import 'package:otakoyi_test_app/ui/widgets/custom_bottom_bar.dart';
 import 'package:otakoyi_test_app/ui/widgets/micro_components/badge.dart';
@@ -28,6 +29,11 @@ class _UsersScreenState extends State<UsersScreen> {
       body: ListView(
         shrinkWrap: true,
         children: [],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: NotificationColors.success,
+        child: Icon(Icons.add),
+        onPressed: () {},
       ),
       bottomNavigationBar: CustomBottomBar(
         items: [
