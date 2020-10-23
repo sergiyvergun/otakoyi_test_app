@@ -32,7 +32,6 @@ class FiltersScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        physics: ClampingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16),
         children: [
           Container(height: 21),

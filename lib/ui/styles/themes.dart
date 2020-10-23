@@ -31,5 +31,10 @@ class Themes {
       fontWeight: FontWeight.w500,
       color: TypographyColors.darkBlue.withOpacity(0.6),
     ),
+    bodyText1: GoogleFonts.workSans(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: TypographyColors.darkBlue.withOpacity(0.6),
+    ),
   ));
 }
